@@ -1,12 +1,12 @@
 steps: 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/microservices-261108/microservices-python','.']
+  args: ['build','-t','gcr.io/microservices-261108/github.com/shubhadag123/microservices:7afee15','.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/microservices-261108/microservices-python']
+  args: ['push','gcr.io/microservices-261108/github.com/shubhadag123/microservices:7afee15']
      
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta','run','deploy','python-image','--image','gcr.io/microservices-261108/microservices-python','--region','us-central1', '--platform','managed','--allow-unauthenticated']
+  args: ['beta','run','deploy','python-image','--image','gcr.io/microservices-261108/github.com/shubhadag123/microservices:7afee15','--region','us-central1', '--platform','managed','--allow-unauthenticated']
  
 images:
-- gcr.io/microservices-261108/microservices-python
+- gcr.io/microservices-261108/github.com/shubhadag123/microservices:7afee15
