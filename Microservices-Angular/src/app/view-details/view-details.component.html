@@ -1,0 +1,56 @@
+
+    <div class="table">
+    <div class="col-md-10">
+<style>
+  .details
+  {
+text-align: center;
+text-decoration-color: brown;
+
+  }
+  .h2
+  .my_text
+  {
+      font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size:      20px;
+      font-weight:    bold;
+  }
+</style>
+<table  class="table table-bordereds"  class="center">
+    <thead class="thead-dark">
+    
+<h2 class="text-center">{{user.firstName}}'s Details</h2>
+  <tr>
+  <th>ID</th>
+  <th>First Name  </th>
+  <th> Last Name </th>
+    <th> Email  </th>
+      <th>Phone Number </th>
+        <th>Birth Date </th>
+          <th>Age  </th>
+  </tr>
+
+</thead>
+  <tbody>
+  <tr>
+ <td>{{user.id}}</td>
+ <td>{{user.firstName}}</td>
+ <td>{{user.lastName}}</td>
+ <td>{{user.email}}</td>
+     <td> {{user.phoneNO}}</td>
+        <td>{{user.birthDate}}</td>
+          <td>{{user.age}}</td>
+          </tr>
+        </tbody>
+ 
+</table>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<button class="btn btn-success" (click)="back()">Go back</button>
+
+  
