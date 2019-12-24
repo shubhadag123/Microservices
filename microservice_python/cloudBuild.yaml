@@ -1,0 +1,14 @@
+steps: #build container image
+    -name:'gcr.io/cloud-builders/docker'
+     args:['build','-t','gcr.io/microservices-261108/microsservices-python','.']
+    
+    #push image to container registry
+    -name:'gcr.io/cloud-builders/docker'
+     args:['push','gcr.io/microservices-261108/microsservices-python']
+     
+     #Deploy image to cloud run
+    -name:'gcr.io/cloud-builders/build'
+      args:['beta','run''deploy','python-image','--image','gcr.io/microservices-261108/microsservices-python',
+            '--region','us-east', '--platform','managed','--allow','unauthenticated'
+    -images:
+            -'gcr.io/microservices-261108/microsservices-python's
