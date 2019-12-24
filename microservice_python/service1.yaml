@@ -1,0 +1,35 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "host-python1",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/host-python1"
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 80,
+        "targetPort": 5000,
+        "nodePort": 32005
+      }
+    ],
+    "selector": {
+      "app": "host-python1"
+    },
+    "clusterIP": "10.0.3.9",
+    "type": "LoadBalancer",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {
+      "ingress": [
+        {
+          "ip": "52.168.73.19"
+        }
+      ]
+    }
+  }
+}

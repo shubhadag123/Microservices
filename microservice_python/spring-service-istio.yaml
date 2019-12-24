@@ -1,0 +1,41 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "hostdetails-spring2",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/hostdetails-spring2",
+    "uid": "0f110bc3-6cc7-11e9-9817-62a19a130d0e",
+    "resourceVersion": "11684989",
+    "creationTimestamp": "2019-05-02T10:43:01Z",
+    "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"hostdetails-spring2\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"port\":80,\"protocol\":\"TCP\",\"targetPort\":8080}],\"selector\":{\"app\":\"hostdetails-spring2\"},\"type\":\"LoadBalancer\"}}\n"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 80,
+        "targetPort": 8080,
+        "nodePort": 31070
+      }
+    ],
+    "selector": {
+      "app": "hostdetails-spring2"
+    },
+    "clusterIP": "10.0.41.221",
+    "type": "LoadBalancer",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {
+      "ingress": [
+        {
+          "ip": "23.96.116.57"
+        }
+      ]
+    }
+  }
+}
