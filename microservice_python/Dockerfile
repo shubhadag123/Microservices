@@ -5,4 +5,4 @@ RUN pip3 install -r requirements.txt && \
     python3 -m textblob.download_corpora
 EXPOSE 5000
 ENTRYPOINT ["python3"]
-CMD ["host-details.py"]
+CMD ["host-details.py"] --bind :$PORT=5000
