@@ -1,0 +1,16 @@
+steps:
+  # build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/microservices-261108/angular-docker-pipeline', 'Microservices-Angular/.']
+  # push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/microservices-261108/angular-docker-pipeline']
+
+  # Deploy container image to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'deploy', 'angular-docker-pipeline', '--image', 'gcr.io/microservices-261108/angular-docker-pipeline', '--region', 'us-east1','--platform','managed','--allow-unauthenticated']
+  env:
+  - 'CONTAINERPORT=80'   
+images:
+- 'gcr.io/microservices-261108/angular-docker-pipeline'
+
