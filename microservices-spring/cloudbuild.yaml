@@ -4,9 +4,9 @@ steps:
 
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'springdocker', '--image', 'gcr.io/microservices-261108/springdocker:latest', '--region', 'us-east1','--platform','managed','--allow-unauthenticated']
+  args: ['beta', 'run', 'deploy', 'springdocker', '--image', 'gcr.io/microservices-261108/sprigdocker:latest', '--region', 'us-east1','--platform','managed','--allow-unauthenticated']
   env:
   - 'CONTAINERPORT=8005'   
 images:
-- gcr.io/microservices-261108/springdocker:latest
+- gcr.io/microservices-261108/sprigdocker:latest
 
