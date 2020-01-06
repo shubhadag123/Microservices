@@ -1,16 +1,16 @@
 steps:
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/microservices-261108/spring-docker', '-f','microservices-spring/Dockerfile','.']
+  args: ['build', '-t', 'gcr.io/microservices-261108/microservices-spring', '-f','microservices-spring/Dockerfile','.']
   # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/microservices-261108/spring-docker']
+  args: ['push', 'gcr.io/microservices-261108/microservices-spring']
 
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'spring-docker', '--image', 'gcr.io/microservices-261108/spring-docker', '--region', 'us-east1','--platform','managed','--allow-unauthenticated']
+  args: ['beta', 'run', 'deploy', 'microservices-spring', '--image', 'gcr.io/microservices-261108/microservices-spring', '--region', 'us-east1','--platform','managed','--allow-unauthenticated']
   env:
   - 'CONTAINERPORT=8005'   
 images:
-- gcr.io/microservices-261108/spring-docker
+- gcr.io/microservices-261108/microservices-spring
 
